@@ -53,21 +53,27 @@ class ColaboradorController extends Controller
     }
     public function actionIndex()
     {
-        $opciones = new menu();
-        $menuItems = $opciones->Creamenu(yii::$app->user->identity->rol_id); 
-        $this->view->params['menuItems'] = $menuItems;
-
+        
+       
+        $proyectosinternos_id=yii::$app->request->get('proyectosinternos_id');
+        //var_dump($proyectosinternos_id);exit();
         $searchModel = new ColaboradorSearch();
        if(yii::$app->user->identity->id){
-            $searchModel->proyectosinternos_id;
-        }
+            if(isset($proyectosinternos_id)){
+                $searchModel->proyectosinternos_id = $proyectosinternos_id;
+              }else{
+              $searchModel->proyectosinternos_id;
 
+            }
+        }
+        //var_dump($proyectosinternos_id);exit();
         $dataProvider = $searchModel->search($this->request->queryParams);
         
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            
+            'proyectosinternos_id' => $proyectosinternos_id,
+          
         ]);
     }
 
@@ -126,6 +132,7 @@ class ColaboradorController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'proyectosinternos_id' => $proyectosinternos_id,
         ]);
     }
 
@@ -137,13 +144,13 @@ class ColaboradorController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
-
+    {   
+        $proyectosinternos_id=yii::$app->request->post('proyectosinternos_id');
+        
         $this->findModel($id)->delete();
          
-    
-
-        return $this->redirect(['verificar']);
+        //var_dump($proyectosinternos_id);exit();
+        return $this->redirect(['index', 'proyectosinternos_id' => $proyectosinternos_id]);
 
     }
 

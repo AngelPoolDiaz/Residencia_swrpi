@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model backend\modules\colaborador\models\Colaborador */
 
 $this->title = 'Crear Colaborador';
-$this->params['breadcrumbs'][] = ['label' => 'Colaboradors'];
+$this->params['breadcrumbs'][] = ['label' => 'Colaborador','url' => ['verificar', 'id' => $model->proyectosinternos_id]];
 //'proyectosinternos_id'=> $proyectosinternos_id
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model backend\modules\formatos\models\Formatos */
 
 $this->title = 'Crear Formatos';
-$this->params['breadcrumbs'][] = ['label' => 'Formatos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Formatos','url' => ['verificar', 'id' => $model->proyectosinternos_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="formatos-create">

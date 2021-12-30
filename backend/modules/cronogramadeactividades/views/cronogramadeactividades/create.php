@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model backend\modules\cronogramadeactividades\models\Cronogramadeactividades */
 
 $this->title = 'Crear Cronogramadeactividades';
-$this->params['breadcrumbs'][] = ['label' => 'Cronogramadeactividades'];
+$this->params['breadcrumbs'][] = ['label' => 'Cronogramadeactividades','url' => ['verificar', 'id' => $model->proyectosinternos_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cronogramadeactividades-create">

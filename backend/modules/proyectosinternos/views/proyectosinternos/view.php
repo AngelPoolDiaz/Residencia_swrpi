@@ -13,13 +13,24 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="proyectosinternos-view">
+    <p>
+
+        <?= Html::a('colaborador', ['/colaborador/colaborador/verificar', 'id' => $model->id], ['class' => 'btn btn-outline-info']) ?>
+
+       <?= Html::a('Formatos', ['/formatos/formatos/verificar', 'id' => $model->id], ['class' => 'btn btn-outline-info']) ?>
+
+        <?= Html::a('Cronograma de Actividades', ['/cronogramadeactividades/cronogramadeactividades/verificar', 'id' => $model->id], ['class' => 'btn btn-outline-info']) ?>
+
+        <?= Html::a('Reportes', ['/reportes/reportes/verificar', 'id' => $model->id], ['class' => 'btn btn-outline-info']) ?>
+        
+    </p>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-outline-warning']) ?>
         <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-outline-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
@@ -28,17 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 
-    <p>
-
-        <?= Html::a('colaborador', ['/colaborador/colaborador/verificar', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-
-       <?= Html::a('Formatos', ['/formatos/formatos/verificar', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-
-        <?= Html::a('Cronograma de Actividades', ['/cronogramadeactividades/cronogramadeactividades/verificar', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-
-        <?= Html::a('Reportes', ['/reportes/reportes/verificar', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
-        
-    </p>
+    
 
 
     <?= DetailView::widget([

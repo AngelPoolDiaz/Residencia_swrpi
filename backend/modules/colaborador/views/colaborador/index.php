@@ -13,12 +13,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="colaborador-index">
     
     <h1><?= Html::encode($this->title) ?></h1>
+    <p>
+        <?= Html::a('Volver', ['/proyectosinternos/proyectosinternos/view','id'=> $proyectosinternos_id], ['class' => 'btn btn-outline-dark']) ?>
+    </p>
 
+    
     <p>
-        <?= Html::a('Volver', ['/proyectosinternos/proyectosinternos/view','id'=> $proyectosinternos_id], ['class' => 'btn btn-success']) ?>
-    </p> 
-    <p>
-        <?= Html::a('Crear Colaborador', ['create','proyectosinternos_id'=> $proyectosinternos_id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Colaborador', ['create','proyectosinternos_id'=> $proyectosinternos_id], ['class' => 'btn btn-outline-success']) ?>
 
         
     </p>

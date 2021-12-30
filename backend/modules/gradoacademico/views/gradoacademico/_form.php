@@ -20,7 +20,7 @@ use backend\modules\gradoacademico\models\Gradoacademico;
     <?= $form->field($model, 'sigla_de_grado')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-outline-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
